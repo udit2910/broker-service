@@ -1,0 +1,12 @@
+{
+  "port" : 8080,
+  "database": {
+    "host": "mongodb+srv://udit2910:udit2910@udit2910.opcmyh4.mongodb.net/?retryWrites=true&w=majority",
+    "default_db_name": "brokerage_master",
+    "auth_source": "admin",
+    "mongo_options": {
+      "useNewUrlParser": true,
+      "useUnifiedTopology": true
+    }
+  }
+}

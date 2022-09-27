@@ -1,0 +1,32 @@
+{
+  "name": "broker-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/udit2910/broker-service.git"
+  },
+  "author": "udit2910",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/udit2910/broker-service/issues"
+  },
+  "homepage": "https://github.com/udit2910/broker-service#readme",
+  "dependencies": {
+    "config": "^3.3.8",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "debug": "^4.3.4",
+    "express": "^4.18.1",
+    "http-errors": "^2.0.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.6.2",
+    "mongoose-plugin-autoinc": "^1.1.9",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20"
+  }
+}

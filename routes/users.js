@@ -6,7 +6,7 @@ const { userDetails } = require('../repositories/users')
 
 app.post('/login', async (req, res) => {
     try {
-      const user = await userDetails(generateQueryForDeleteDetails(req.body), getCommonProjection(),'brokerage_master')
+      const user = await userDetails(generateQueryForDeleteDetails(req.body), getCommonProjection(),'broker_master')
       console.log('fetched user details: %j , %s', user , user)
       if (user && user.length > 0) {
         res.status(200).json(user)

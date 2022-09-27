@@ -6,10 +6,10 @@ const { userDetails } = require('../repositories/users')
 
 app.post('/login', async (req, res) => {
     try {
-      const todos = await userDetails(generateQueryForDeleteDetails(req.body), getCommonProjection(),'brokerage_master')
-      console.log('fetched user details: %j , %s', todos , todos)
-      if (todos && todos.length > 0) {
-        res.status(200).json(todos)
+      const user = await userDetails(generateQueryForDeleteDetails(req.body), getCommonProjection(),'brokerage_master')
+      console.log('fetched user details: %j , %s', user , user)
+      if (user && user.length > 0) {
+        res.status(200).json(user)
         } else {
           res.status(400).json('userName/password do not match')
         }

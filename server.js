@@ -25,10 +25,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const usersRoutes = require('./routes/users');
 const manufacturersRoutes = require('./routes/manufacturers');
+const partiesRoutes = require('./routes/parties');
+const dealsRoutes = require('./routes/deals');
+
 
 
 app.use('/api/v1/users', usersRoutes);
 app.use('/api/v1/mfgs', manufacturersRoutes);
+app.use('/api/v1/parties', partiesRoutes);
+app.use('/api/v1/deals', dealsRoutes);
 
 
 // catch 404 and forward to error handler

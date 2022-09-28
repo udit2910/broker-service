@@ -6,7 +6,9 @@
     "auth_source": "admin",
     "mongo_options": {
       "useNewUrlParser": true,
-      "useUnifiedTopology": true
+      "useUnifiedTopology": true,
+      "retryWrites":true,
+      "writeConcern": "majority"
     }
   }
 }

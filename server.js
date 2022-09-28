@@ -24,8 +24,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 const usersRoutes = require('./routes/users');
+const manufacturersRoutes = require('./routes/manufacturers');
+
 
 app.use('/api/v1/users', usersRoutes);
+app.use('/api/v1/mfgs', manufacturersRoutes);
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

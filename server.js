@@ -7,6 +7,11 @@ const logger = require('morgan');
 const cors = require('cors')
 const config = require('config')
 const http = require('http')
+const dotenv = require('dotenv');
+dotenv.config();
+console.log(`Your port is ${process.env.PORT}`);
+const host = '0.0.0.0';
+const port = process.env.PORT || 8080;
 
 const dbUtil = require('./db')(config.database)
 dbUtil.connect()
@@ -52,7 +57,12 @@ app.use((err, req, res) => {
   res.render('error');
 });
 
-app.listen(config.port); // Listen on port defined in environment
-console.log('Server is running on port',config.port)
+
+app.listen(port, host, function() {
+  console.log('Server is running on port',port)
+});
+
+// app.listen(config.port); // Listen on port defined in environment
+// console.log('Server is running on port',config.port)
 
 module.exports = app;

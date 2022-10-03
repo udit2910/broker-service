@@ -9,6 +9,9 @@ const usersSchema = new Schema({
   user_id: {
     type: Number,
   },
+  email_id: {
+    type: String,
+  },
   user_name: {
     type: String,
   },

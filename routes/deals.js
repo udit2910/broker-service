@@ -11,7 +11,10 @@ app.get('/get/:user_id', async (req, res) => {
     const limit = Number(req.query['limit'])
     const startDate = req.query['startDate']
     const endDate = req.query['endDate']
-    const query = generateQueryForGetDetails(userId, startDate, endDate)
+    const party_id = req.query['party_id']
+    const mfg_id = req.query['mfg_id']
+
+    const query = generateQueryForGetDetails(userId, startDate, endDate, party_id, mfg_id)
     const [response, deals] = await Promise.all([
       getDetails(query, getCommonProjection(), 'broker_master'),
       getDetailsWithLimit(query, getCommonProjection(), offset, limit,'broker_master')
@@ -77,7 +80,7 @@ app.post('/update', async (req, res) => {
 });
 
 
-function generateQueryForGetDetails (userId, startDate, endDate) {
+function generateQueryForGetDetails (userId, startDate, endDate, party_id, mfg_id) {
   const query = []
 
   let startRange = startDate ? startDate : getDefaultDateRange(true)
@@ -90,6 +93,13 @@ function generateQueryForGetDetails (userId, startDate, endDate) {
   query.push(getQuery('deal_date', '$gte',startRange))
   query.push(getQuery('deal_date', '$lt',endRange))
   query.push(getQuery('added_by', '$eq', Number(userId)))
+
+  if (party_id) {
+    query.push(getQuery('party_id', '$eq', Number(party_id)))
+  }
+  if (mfg_id) {
+    query.push(getQuery('mfg_id', '$eq', Number(mfg_id)))
+  }
   return getQueryArrayForOperation('$and', query)
 }
 

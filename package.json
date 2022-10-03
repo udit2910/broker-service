@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/udit2910/broker-service#readme",
   "dependencies": {
+    "@mongoosejs/double": "^0.3.0",
     "config": "^3.3.8",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",

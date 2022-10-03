@@ -59,6 +59,7 @@ app.get("/get/:user_id", async (req, res) => {
 app.put("/add", async (req, res) => {
   try {
     const reqBody = req.body;
+    reqBody.total = req.body.meters * req.body.rate;
     const deals = await insertDetails(
       [reqBody],
       getCommonProjection(),
@@ -161,6 +162,10 @@ function generateUpdateJson(reqBody) {
   json["mfg_id"] = reqBody.mfg_id;
   json["deal_date"] = reqBody.deal_date;
   json["meters"] = reqBody.meters;
+  json["rate"] = reqBody.rate;
+  json["quality"] = reqBody.quality;
+  json["total"] = (reqBody.meters * reqBody.rate).toFixed(2);
+
   return getUpdateJsonFormat(json);
 }
 

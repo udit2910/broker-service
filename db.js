@@ -47,6 +47,7 @@ module.exports = (opts) => {
 }
 
 async function createNewConnection (opts, dbName) {
+  // opts.host = "localhost:27017"
   // let url = `mongodb://${opts.host}/${dbName}`
   let url = `${opts.host}/${dbName}`
   if (opts.replica_set) {

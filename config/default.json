@@ -1,7 +1,7 @@
 {
   "port" : 8080,
   "database": {
-    "host": "mongodb+srv://udit2910:udit2910@udit2910.opcmyh4.mongodb.net",
+    "host": "mongodb+srv://<id>:<pwd>@broker-master.spezr.mongodb.net",
     "default_db_name": "broker_master",
     "auth_source": "admin",
     "mongo_options": {

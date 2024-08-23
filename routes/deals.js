@@ -12,7 +12,7 @@ const {
 // fetched all/specific deals details added by user with/without filter
 app.get("/get/:user_id", async (req, res) => {
   try {
-    const userId = req.params["user_id"];
+    const userId = Number(req.params["user_id"]);
     const offset = Number(req.query["offset"]);
     const limit = Number(req.query["limit"]);
     const startDate = req.query["startDate"];
